@@ -1,0 +1,21 @@
+version: '2'
+services:
+    nginx:
+        build: ./nginx
+        ports:
+            - "8000:80"
+        volumes:
+            - ./symfony:/var/www/symfony
+    phpfpm:
+        build: ./php-fpm
+        expose:
+            - "9000"
+        volumes:
+            - ./symfony:/var/www/symfony
+    mysql:
+        build: ./mysql
+        ports:
+            - "3306:3306"
+        environment:
+            - MYSQL_ROOT_PASSWORD
+            - MYSQL_DATABASE
