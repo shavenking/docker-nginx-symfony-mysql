@@ -19,3 +19,5 @@ services:
         environment:
             - MYSQL_ROOT_PASSWORD
             - MYSQL_DATABASE
+    redis:
+        image: redis:3.2
