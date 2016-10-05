@@ -8,8 +8,6 @@ services:
             - ./symfony:/var/www/symfony
     phpfpm:
         build: ./php-fpm
-        expose:
-            - "9000"
         volumes:
             - ./symfony:/var/www/symfony
     mysql:
